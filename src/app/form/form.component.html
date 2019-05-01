@@ -1,0 +1,34 @@
+<div class="container mt-5">
+  <form [formGroup]='form'>
+    From : 
+    <select name="fromYear" id="fromYear" formControlName="fromYear" [(ngModel)]="from.year" (change)="getFromMonths(); getToYears()">
+      <option value="">Select Year</option>
+      <option *ngFor="let year of fromYears" [value]="year">{{ year }}</option>
+    </select>&nbsp;
+    <select name="fromMonth" id="fromMonth" formControlName="fromMonth" [(ngModel)]="from.month" (change)="getToMonths()">
+      <option value="">Select Month</option>
+      <option *ngFor="let month of fromMonths" [value]="month">{{ month }}</option>
+    </select>&nbsp;
+  
+      &nbsp;&nbsp;
+    To : 
+    <select name="toYear" id="toYear" formControlName="toYear" [(ngModel)]="to.year" (change)="getToMonths()">
+      <option value="">Select Year</option>
+      <option *ngFor="let year of toYears" [value]="year">{{ year }}</option>
+    </select>&nbsp;
+    <select name="toMonth" id="toMonth" formControlName="toMonth" [(ngModel)]="to.month">
+      <option value="">Select Month</option>
+      <option *ngFor="let month of toMonths" [value]="month">{{ month }}</option>
+    </select>&nbsp;
+      &nbsp;&nbsp;
+
+    <button (click)="generateRecords()">Generate</button>
+
+  </form>
+</div>
+
+<div class="container card" *ngFor="let record of records">
+  {{record.date}}
+</div>
+
+<button (click)="finalOutput()">submit</button>
