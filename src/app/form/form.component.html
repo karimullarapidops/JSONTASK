@@ -29,6 +29,10 @@
 
 <div class="container card" *ngFor="let record of records">
   {{record.date}}
+    <label>Value1 : <input type="text" [(ngModel)]="record.value1"></label><br/>
+    <label>Value2 : <input type="text" [(ngModel)]="record.value2"></label><br/>
+    <label>Value3 : <input type="text" [(ngModel)]="record.value3"></label><br/>
+    <br/>
 </div>
 
 <button (click)="finalOutput()">submit</button>
