@@ -21,11 +21,6 @@ export class FormComponent implements OnInit {
 
   }
 
-  // onSubmit() {
-  //   console.log(this.form);
-  //   console.log(this.form.value);
-  // }
-
   from = {
     year: '',
     month: ''
@@ -102,16 +97,6 @@ export class FormComponent implements OnInit {
     toYear: new FormControl(),
     toMonth: new FormControl()
   })
-
-  // detail = new FormGroup({
-  //   value1: new FormControl('', Validators.required),
-  //   value2: new FormControl('', Validators.required),
-  //   value3: new FormControl('', Validators.required),
-  // })
-
-  // onSubmit(){
-  //   console.log(this.detail.value);
-  // }
 
   ngOnInit() {
     this.currentYear = new Date().getFullYear();
